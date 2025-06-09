@@ -21,6 +21,32 @@ function playRound(humanChoice, computerChoice) {
 
     console.log(`You chose ${humanChoice}`);
     console.log(`The computer chose ${computerChoice}`);
+
+    if (humanChoice === "rock") {
+        if (computerChoice === "paper") {
+            console.log(`${computerChoice} beats ${humanChoice}! You lost`);
+        } else if (computerChoice === "scissors") {
+            console.log(`${humanChoice} beats ${computerChoice}! You won`);
+        } else if (computerChoice === "rock") {
+            console.log(`Both picked ${humanChoice}! You tied`);
+        }
+    } else if (humanChoice === "paper") {
+        if (computerChoice === "scissors") {
+            console.log(`${computerChoice} beats ${humanChoice}! You lost`);
+        } else if (computerChoice === "rock") {
+            console.log(`${humanChoice} beats ${computerChoice}! You won`);
+        } else if (computerChoice === "paper") {
+            console.log(`Both picked ${humanChoice}! You tied`);
+        }
+    } else if (humanChoice === "scissors") {
+        if (computerChoice === "rock") {
+            console.log(`${computerChoice} beats ${humanChoice}! You lost`);
+        } else if (computerChoice === "paper") {
+            console.log(`${humanChoice} beats ${computerChoice}! You won`);
+        } else if (computerChoice === "scissors") {
+            console.log(`Both picked ${humanChoice}! You tied`);
+        }
+    }
 }
 
 function playGame(totalRounds) {
