@@ -8,8 +8,8 @@ function getRandomInt(min, max) {
 }
 
 function getComputerChoice() {
-    let randomIndex = getRandomInt(0, 2)
-    return ANSWERS[randomIndex]
+    let randomIndex = getRandomInt(0, 2);
+    return ANSWERS[randomIndex];
 }
 
 function getHumanChoice() {
@@ -17,5 +17,5 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-
+    humanChoice = humanChoice.toLowerCase();
 }
