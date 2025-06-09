@@ -15,3 +15,7 @@ function getComputerChoice() {
 function getHumanChoice() {
     return prompt("Pick either, rock, paper, or scissors as your answer")
 }
+
+function playRound(humanChoice, computerChoice) {
+
+}
