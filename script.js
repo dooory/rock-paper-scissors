@@ -82,6 +82,8 @@ function playGame(totalRounds) {
 
         console.log(`Your score ${humanScore}. Computers score ${computerScore}`)
     }
+
+    console.log(`\nFinal score:\nYou: ${humanScore}\nComputer: ${computerScore}`)
 }
 
 playGame(5);
