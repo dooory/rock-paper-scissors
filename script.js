@@ -15,8 +15,8 @@ let randomAnswer = answers[randomAnswerIndex];
 // Ask the user which answer they pick and store it in a let variable.
 let userAnswer = prompt("Pick either, rock, paper, or scissors");
 
-console.log(userAnswer);
-//
+// Using a for loop, repeatively ask the user to pick either, rock, paper, or scissors.
+
 // Print the results to the user.
 //
 // If both answers are equal, repeat the last 3 steps until not true
