@@ -18,6 +18,9 @@ function getHumanChoice() {
 
 function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
+
+    console.log(`You chose ${humanChoice}`);
+    console.log(`The computer chose ${computerChoice}`);
 }
 
 function playGame(totalRounds) {
@@ -25,9 +28,8 @@ function playGame(totalRounds) {
         let computerSelection = getComputerChoice();
         let humanSelection = getHumanChoice();
 
-        console.log(computerSelection);
-        console.log(humanSelection);
+        playRound(humanSelection, computerSelection);
     }
 }
 
-playGame(5);
+playGame(1);
