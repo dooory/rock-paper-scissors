@@ -29,7 +29,7 @@ function playRound(humanChoice, computerChoice) {
 
             return "human";
         } else if (computerChoice === "rock") {
-            console.log(`Both picked ${humanChoice}! You tied`);
+            console.log(`You both picked ${humanChoice}! You tied`);
 
             return "none"
         }
@@ -43,7 +43,7 @@ function playRound(humanChoice, computerChoice) {
 
             return "human";
         } else if (computerChoice === "paper") {
-            console.log(`Both picked ${humanChoice}! You tied`);
+            console.log(`You both picked ${humanChoice}! You tied`);
 
             return "none"
         }
@@ -57,7 +57,7 @@ function playRound(humanChoice, computerChoice) {
 
             return "human";
         } else if (computerChoice === "scissors") {
-            console.log(`Both picked ${humanChoice}! You tied`);
+            console.log(`You both picked ${humanChoice}! You tied`);
 
             return "none"
         }
@@ -70,9 +70,9 @@ function playGame(totalRounds) {
 
     for (let roundsPlayed = 0; roundsPlayed < totalRounds; roundsPlayed++) {
         if (roundsPlayed > 0) {
-            console.log(`\nRound ${roundsPlayed + 1}`)
+            console.log(`\nRound ${roundsPlayed + 1}`);
         } else {
-            console.log(`Round ${roundsPlayed + 1}`)
+            console.log(`Round ${roundsPlayed + 1}`);
         }
 
         let computerSelection = getComputerChoice();
@@ -86,10 +86,18 @@ function playGame(totalRounds) {
             humanScore++;
         }
 
-        console.log(`Your score ${humanScore}. Computers score ${computerScore}`)
+        console.log(`Your score ${humanScore}. Computers score ${computerScore}`);
     }
 
-    console.log(`\nFinal score:\nYou: ${humanScore}\nComputer: ${computerScore}`)
+    console.log(`\nFinal score:\nYou: ${humanScore}\nComputer: ${computerScore}\n`);
+
+    if (humanScore > computerScore) {
+        console.log("You won!");
+    } else if (humanScore < computerScore) {
+        console.log("You lost!");
+    } else if (humanScore == computerScore) {
+        console.log("You tied!");
+    }
 }
 
 playGame(5);
