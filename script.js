@@ -13,11 +13,14 @@ let randomAnswerIndex = generateRandomInt(0, 2);
 let randomAnswer = answers[randomAnswerIndex];
 
 // Ask the user which answer they pick and store it in a let variable.
-let userAnswer = prompt("Pick either, rock, paper, or scissors");
-
-userAnswer.toLowerCase();
+let userAnswer = prompt("Pick either, rock, paper, or scissors").toLowerCase();
 
 // Using a for loop, repeatively ask the user to pick either, rock, paper, or scissors.
+while (!answers.includes(userAnswer)) {
+    userAnswer = prompt(`${userAnswer} is an invalid answer, please choice between, rock, paper, or scissors.`)
+}
+
+console.log(userAnswer);
 
 // Print the results to the user.
 //
