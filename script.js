@@ -20,9 +20,7 @@ while (!answers.includes(userAnswer)) {
     userAnswer = prompt(`${userAnswer} is an invalid answer, please choice between, rock, paper, or scissors.`)
 }
 
-console.log(userAnswer);
-
-// Print the results to the user.
+// Print the users answer and the programs answer.
 //
 // If both answers are equal, repeat the last 3 steps until not true
 //
