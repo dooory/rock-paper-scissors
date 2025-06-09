@@ -19,48 +19,48 @@ function playRound(humanChoice, computerChoice) {
     console.log(`You chose ${humanChoice}`);
     console.log(`The computer chose ${computerChoice}`);
 
-    if (humanChoice === "rock") {
-        if (computerChoice === "paper") {
-            console.log(`${computerChoice} beats ${humanChoice}! You lost`);
+    if (humanChoice === "rock" && computerChoice === "scissors") {
+        console.log(`${humanChoice} beats ${computerChoice}! You won`);
 
-            return "computer";
-        } else if (computerChoice === "scissors") {
-            console.log(`${humanChoice} beats ${computerChoice}! You won`);
+        return "human";
+    }
 
-            return "human";
-        } else if (computerChoice === "rock") {
-            console.log(`You both picked ${humanChoice}! You tied`);
+    if (humanChoice === "paper" && computerChoice === "rock") {
+        console.log(`${humanChoice} beats ${computerChoice}! You won`);
 
-            return "none"
-        }
-    } else if (humanChoice === "paper") {
-        if (computerChoice === "scissors") {
-            console.log(`${computerChoice} beats ${humanChoice}! You lost`);
+        return "human";
+    }
 
-            return "computer";
-        } else if (computerChoice === "rock") {
-            console.log(`${humanChoice} beats ${computerChoice}! You won`);
+    if (humanChoice === "scissors" && computerChoice === "paper") {
+        console.log(`${humanChoice} beats ${computerChoice}! You won`);
 
-            return "human";
-        } else if (computerChoice === "paper") {
-            console.log(`You both picked ${humanChoice}! You tied`);
+        return "human";
+    }
 
-            return "none"
-        }
-    } else if (humanChoice === "scissors") {
-        if (computerChoice === "rock") {
-            console.log(`${computerChoice} beats ${humanChoice}! You lost`);
 
-            return "computer";
-        } else if (computerChoice === "paper") {
-            console.log(`${humanChoice} beats ${computerChoice}! You won`);
+    if (humanChoice === "rock" && computerChoice === "paper") {
+        console.log(`${humanChoice} beats ${computerChoice}! You won`);
 
-            return "human";
-        } else if (computerChoice === "scissors") {
-            console.log(`You both picked ${humanChoice}! You tied`);
+        return "human";
+    }
 
-            return "none"
-        }
+    if (humanChoice === "paper" && computerChoice === "scissors") {
+        console.log(`${humanChoice} beats ${computerChoice}! You won`);
+
+        return "human";
+    }
+
+    if (humanChoice === "scissors" && computerChoice === "rock") {
+        console.log(`${humanChoice} beats ${computerChoice}! You won`);
+
+        return "human";
+    }
+
+
+    if (humanChoice === computerChoice) {
+        console.log(`You both chose ${humanChoice}! You tie`)
+
+        return "none"
     }
 }
 
