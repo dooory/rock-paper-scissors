@@ -1,5 +1,6 @@
 let computerScore = 0;
 let humanScore = 0;
+let winningScore = 5;
 
 const ANSWERS = ["rock", "paper", "scissors"];
 
@@ -18,4 +19,8 @@ function getHumanChoice() {
 
 function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
+}
+
+for (let roundsPlayed = 0; roundsPlayed < 5; roundsPlayed++) {
+
 }
