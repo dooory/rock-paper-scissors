@@ -1,6 +1,3 @@
-let computerScore = 0;
-let humanScore = 0;
-
 const ANSWERS = ["rock", "paper", "scissors"];
 
 function getRandomInt(min, max) {
@@ -68,12 +65,23 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame(totalRounds) {
+    let computerScore = 0;
+    let humanScore = 0;
+
     for (let roundsPlayed = 0; roundsPlayed < totalRounds; roundsPlayed++) {
         let computerSelection = getComputerChoice();
         let humanSelection = getHumanChoice();
 
         let roundResult = playRound(humanSelection, computerSelection);
+
+        if (roundResult === "computer") {
+            computerScore++;
+        } else if (roundResult === "human") {
+            humanScore++;
+        }
+
+        console.log(`Your score ${humanScore}. Computers score ${computerScore}`)
     }
 }
 
-playGame(1);
+playGame(5);
