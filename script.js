@@ -25,26 +25,44 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock") {
         if (computerChoice === "paper") {
             console.log(`${computerChoice} beats ${humanChoice}! You lost`);
+
+            return "computer";
         } else if (computerChoice === "scissors") {
             console.log(`${humanChoice} beats ${computerChoice}! You won`);
+
+            return "human";
         } else if (computerChoice === "rock") {
             console.log(`Both picked ${humanChoice}! You tied`);
+
+            return "none"
         }
     } else if (humanChoice === "paper") {
         if (computerChoice === "scissors") {
             console.log(`${computerChoice} beats ${humanChoice}! You lost`);
+
+            return "computer";
         } else if (computerChoice === "rock") {
             console.log(`${humanChoice} beats ${computerChoice}! You won`);
+
+            return "human";
         } else if (computerChoice === "paper") {
             console.log(`Both picked ${humanChoice}! You tied`);
+
+            return "none"
         }
     } else if (humanChoice === "scissors") {
         if (computerChoice === "rock") {
             console.log(`${computerChoice} beats ${humanChoice}! You lost`);
+
+            return "computer";
         } else if (computerChoice === "paper") {
             console.log(`${humanChoice} beats ${computerChoice}! You won`);
+
+            return "human";
         } else if (computerChoice === "scissors") {
             console.log(`Both picked ${humanChoice}! You tied`);
+
+            return "none"
         }
     }
 }
