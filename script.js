@@ -1,4 +1,7 @@
-const ANSWERS = ["rock", "paper", "scissors"]
+let computerScore = 0;
+let humanScore = 0;
+
+const ANSWERS = ["rock", "paper", "scissors"];
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -12,5 +15,3 @@ function getComputerChoice() {
 function getHumanChoice() {
     return prompt("Pick either, rock, paper, or scissors as your answer")
 }
-
-console.log(getHumanChoice())
