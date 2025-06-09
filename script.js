@@ -9,4 +9,8 @@ function getComputerChoice() {
     return ANSWERS[randomIndex]
 }
 
-console.log(getComputerChoice())
+function getHumanChoice() {
+    return prompt("Pick either, rock, paper, or scissors as your answer")
+}
+
+console.log(getHumanChoice())
