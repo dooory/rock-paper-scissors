@@ -69,6 +69,12 @@ function playGame(totalRounds) {
     let humanScore = 0;
 
     for (let roundsPlayed = 0; roundsPlayed < totalRounds; roundsPlayed++) {
+        if (roundsPlayed > 0) {
+            console.log(`\nRound ${roundsPlayed + 1}`)
+        } else {
+            console.log(`Round ${roundsPlayed + 1}`)
+        }
+
         let computerSelection = getComputerChoice();
         let humanSelection = getHumanChoice();
 
