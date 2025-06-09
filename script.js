@@ -72,7 +72,7 @@ function playGame(totalRounds) {
         let computerSelection = getComputerChoice();
         let humanSelection = getHumanChoice();
 
-        playRound(humanSelection, computerSelection);
+        let roundResult = playRound(humanSelection, computerSelection);
     }
 }
 
