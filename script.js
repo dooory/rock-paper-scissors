@@ -12,9 +12,11 @@ let randomAnswerIndex = generateRandomInt(0, 2);
 
 let randomAnswer = answers[randomAnswerIndex];
 
-console.log(randomAnswer);
 // Ask the user which answer they pick and store it in a let variable.
-// 
+let userAnswer = prompt("Pick either, rock, paper, or scissors");
+
+console.log(userAnswer);
+//
 // Print the results to the user.
 //
 // If both answers are equal, repeat the last 3 steps until not true
