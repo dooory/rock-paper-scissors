@@ -15,6 +15,8 @@ let randomAnswer = answers[randomAnswerIndex];
 // Ask the user which answer they pick and store it in a let variable.
 let userAnswer = prompt("Pick either, rock, paper, or scissors");
 
+userAnswer.toLowerCase();
+
 // Using a for loop, repeatively ask the user to pick either, rock, paper, or scissors.
 
 // Print the results to the user.
