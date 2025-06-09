@@ -22,8 +22,12 @@ function playRound(humanChoice, computerChoice) {
 
 function playGame(totalRounds) {
     for (let roundsPlayed = 0; roundsPlayed < totalRounds; roundsPlayed++) {
+        let computerSelection = getComputerChoice();
+        let humanSelection = getHumanChoice();
 
+        console.log(computerSelection);
+        console.log(humanSelection);
     }
 }
 
-playGame(5)
+playGame(5);
