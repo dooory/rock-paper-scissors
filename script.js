@@ -100,4 +100,4 @@ function playGame(totalRounds) {
     }
 }
 
-playGame(1);
+// playGame(1);
