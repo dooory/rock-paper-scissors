@@ -123,14 +123,17 @@ weaponButtons.forEach(button => {
             if (playerScores["User"] >= 5) {
                 clearWeaponElements();
                 
+                restartButton.style.display = "initial";
                 announcerText.textContent = "You win the game!";
             }
 
             if (playerScores["Computer"] >= 5) {
                 clearWeaponElements();
                 
+                restartButton.style.display = "initial";
                 announcerText.textContent = "You lost the game!";
             }
+
         }
    }) 
 });
@@ -138,6 +141,8 @@ weaponButtons.forEach(button => {
 restartButton.addEventListener("click", function(button) {
     announcerText.textContent = defaultAnnouncerText;
     introductionElement.style.display = "block";
+    restartButton.style.display = "none";
+
     resetPlayerScores();
     clearWeaponElements();
 })
