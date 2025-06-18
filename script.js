@@ -41,19 +41,19 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock" && computerChoice === "paper") {
         console.log(`${humanChoice} beats ${computerChoice}! You won`);
 
-        return "human";
+        return "computer";
     }
 
     if (humanChoice === "paper" && computerChoice === "scissors") {
         console.log(`${humanChoice} beats ${computerChoice}! You won`);
 
-        return "human";
+        return "computer";
     }
 
     if (humanChoice === "scissors" && computerChoice === "rock") {
         console.log(`${humanChoice} beats ${computerChoice}! You won`);
 
-        return "human";
+        return "computer";
     }
 
 
@@ -67,6 +67,8 @@ function playRound(humanChoice, computerChoice) {
 function playGame(totalRounds) {
     let computerScore = 0;
     let humanScore = 0;
+
+    const resultsText = document.querySelector("#results-text");
 
     for (let roundsPlayed = 0; roundsPlayed < totalRounds; roundsPlayed++) {
         if (roundsPlayed > 0) {
@@ -92,12 +94,15 @@ function playGame(totalRounds) {
     console.log(`\nFinal score:\nYou: ${humanScore}\nComputer: ${computerScore}\n`);
 
     if (humanScore > computerScore) {
+        resultsText.textContent = "You won!";
         console.log("You won!");
     } else if (humanScore < computerScore) {
+        resultsText.textContent = "You lost!";
         console.log("You lost!");
     } else if (humanScore == computerScore) {
+        resultsText.textContent = "You tied!";
         console.log("You tied!");
     }
 }
 
-// playGame(1);
+playGame(1);
