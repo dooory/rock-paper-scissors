@@ -64,7 +64,11 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+let gameInProgress = false;
+
 function playGame(totalRounds) {
+    gameInProgress = true;
+    
     let computerScore = 0;
     let humanScore = 0;
 
@@ -107,6 +111,14 @@ function playGame(totalRounds) {
         resultsText.textContent = "You tied!";
         console.log("You tied!");
     }
+
+    gameInProgress = false;
 }
 
-// playGame(1);
+const playButton = document.querySelector("#playButton")
+
+playButton.addEventListener("click", () => {
+    if (!gameInProgress) {
+        playGame(1);
+    }
+})
