@@ -74,10 +74,33 @@ function playRound(userWeapon) {
     return roundWinner
 }
 
+function clearWeaponElements() {
+    userWeaponElement.textContent = "";
+    computerWeaponElement.textContent = "";
+}
+
 // looping through each weapon's button
 weaponButtons.forEach(button => {
    // sending through the name of the buttons weapon
    button.addEventListener("click", element => {
-        playRound(element.target.textContent);
+        const buttonWeaponValue = element.target.textContent;
+
+        if (userScore < 4 && computerScore < 4) {
+            playRound(buttonWeaponValue);
+        } else if (!(userScore === 5) && !(computerScore === 5)) {
+            playRound(buttonWeaponValue);
+
+            if (userScore >= 5) {
+                clearWeaponElements();
+                
+                announcerText.textContent = "You win the game!";
+            }
+
+            if (computerScore >= 5) {
+                clearWeaponElements();
+                
+                announcerText.textContent = "You lost the game!";
+            }
+        }
    }) 
 });
