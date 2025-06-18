@@ -1,5 +1,6 @@
 const announcerText = document.querySelector("#announcerText");
 const defaultAnnouncerText = announcerText.textContent;
+const introductionElement = document.querySelector("#introduction");
 
 const userWeaponElement = document.querySelector("#userWeapon");
 const userScoreElement = document.querySelector("#userScore");
@@ -80,6 +81,11 @@ function resetPlayerScores() {
 }
 
 function playRound(userWeapon) {
+    // hiding introduction element
+    if (introductionElement.style.display != "none") {
+        introductionElement.style.display = "none";
+    }
+
     const computerWeapon = getRandomWeapon();
     const roundWinner = getRoundWinner(userWeapon, computerWeapon); 
     
@@ -131,6 +137,7 @@ weaponButtons.forEach(button => {
 
 restartButton.addEventListener("click", function(button) {
     announcerText.textContent = defaultAnnouncerText;
+    introductionElement.style.display = "block";
     resetPlayerScores();
     clearWeaponElements();
 })
