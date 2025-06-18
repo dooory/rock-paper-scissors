@@ -72,6 +72,7 @@ function playGame(totalRounds) {
     let computerScore = 0;
     let humanScore = 0;
 
+    const roundsPlayedText = document.querySelector("#roundsPlayedText")
     const resultsText = document.querySelector("#results-text");
     const humanScoreCounter = document.querySelector("#human-score");
     const computerScoreCounter = document.querySelector("#computer-score");
@@ -82,6 +83,8 @@ function playGame(totalRounds) {
         } else {
             console.log(`Round ${roundsPlayed + 1}`);
         }
+
+        roundsPlayedText.textContent = `Round Count: ${roundsPlayed + 1}`
 
         let computerSelection = getComputerChoice();
         let humanSelection = getHumanChoice();
@@ -119,6 +122,6 @@ const playButton = document.querySelector("#playButton")
 
 playButton.addEventListener("click", () => {
     if (!gameInProgress) {
-        playGame(1);
+        playGame(3);
     }
 })
