@@ -1,4 +1,5 @@
 const announcerText = document.querySelector("#announcerText");
+const defaultAnnouncerText = announcerText.textContent;
 
 const userWeaponElement = document.querySelector("#userWeapon");
 const userScoreElement = document.querySelector("#userScore");
@@ -8,11 +9,17 @@ const computerScoreElement = document.querySelector("#computerScore");
 
 // For looping through and adding click event listeners
 const weaponButtons = document.querySelectorAll(".weaponButton");
+const restartButton = document.querySelector("#restartButton");
 
 const WEAPONS_ARRAY = ["Rock", "Paper", "Scissors"];
 
 let userScore = 0; 
 let computerScore = 0;
+
+let playerScores = {
+    "User" : 0,
+    "Computer" : 0,
+}
 
 // generates a random number inclusively, so it can be between >= min and <= max
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
@@ -55,6 +62,23 @@ function getRoundWinner(userWeapon, computerWeapon) {
     return winner;
 }
 
+function setPlayerScore(playerName, amount) {
+    playerScores[playerName] = amount;
+}
+
+
+function incrementPlayerScore(playerName) {
+    playerScores[playerName]++;
+}
+
+function resetPlayerScores() {
+    setPlayerScore("Computer", 0);
+    setPlayerScore("User", 0);
+
+    userScoreElement.textContent = `Your score: ${playerScores["User"]}`;
+    computerScoreElement.textContent = `Computer score: ${playerScores["Computer"]}`;
+}
+
 function playRound(userWeapon) {
     const computerWeapon = getRandomWeapon();
     const roundWinner = getRoundWinner(userWeapon, computerWeapon); 
@@ -64,11 +88,11 @@ function playRound(userWeapon) {
     announcerText.textContent = `${roundWinner === "User" ? "You" : roundWinner} won that round!`
 
     if (roundWinner === "User") {
-        userScore++;
-        userScoreElement.textContent = `Your score: ${userScore}`;
+        incrementPlayerScore(roundWinner);
+        userScoreElement.textContent = `Your score: ${playerScores[roundWinner]}`;
     } else if (roundWinner === "Computer") {
-        computerScore++;
-        computerScoreElement.textContent = `Computer score: ${computerScore}`;
+        incrementPlayerScore(roundWinner)
+        computerScoreElement.textContent = `Computer score: ${playerScores[roundWinner]}`;
     }
 
     return roundWinner
@@ -85,18 +109,18 @@ weaponButtons.forEach(button => {
    button.addEventListener("click", element => {
         const buttonWeaponValue = element.target.textContent;
 
-        if (userScore < 4 && computerScore < 4) {
+        if (playerScores["User"] < 4 && playerScores["Computer"] < 4) {
             playRound(buttonWeaponValue);
-        } else if (!(userScore === 5) && !(computerScore === 5)) {
+        } else if (!(playerScores["User"] === 5) && !(playerScores["Computer"] === 5)) {
             playRound(buttonWeaponValue);
 
-            if (userScore >= 5) {
+            if (playerScores["User"] >= 5) {
                 clearWeaponElements();
                 
                 announcerText.textContent = "You win the game!";
             }
 
-            if (computerScore >= 5) {
+            if (playerScores["Computer"] >= 5) {
                 clearWeaponElements();
                 
                 announcerText.textContent = "You lost the game!";
@@ -104,3 +128,9 @@ weaponButtons.forEach(button => {
         }
    }) 
 });
+
+restartButton.addEventListener("click", function(button) {
+    announcerText.textContent = defaultAnnouncerText;
+    resetPlayerScores();
+    clearWeaponElements();
+})
