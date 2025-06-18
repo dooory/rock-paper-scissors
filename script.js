@@ -69,6 +69,8 @@ function playGame(totalRounds) {
     let humanScore = 0;
 
     const resultsText = document.querySelector("#results-text");
+    const humanScoreCounter = document.querySelector("#human-score");
+    const computerScoreCounter = document.querySelector("#computer-score");
 
     for (let roundsPlayed = 0; roundsPlayed < totalRounds; roundsPlayed++) {
         if (roundsPlayed > 0) {
@@ -84,8 +86,10 @@ function playGame(totalRounds) {
 
         if (roundResult === "computer") {
             computerScore++;
+            computerScoreCounter.textContent = `Computers score: ${computerScore}`
         } else if (roundResult === "human") {
             humanScore++;
+            humanScoreCounter.textContent = `Your score: ${humanScore}`
         }
 
         console.log(`Your score ${humanScore}. Computers score ${computerScore}`);
